@@ -1,0 +1,25 @@
+.imageList {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+}
+
+.title {
+  text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  .image {
+    width: 100%;
+    height: 200px;
+  }
+}

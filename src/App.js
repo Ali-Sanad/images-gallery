@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import useImageList from './hooks/useImageList';
+import styles from './App.module.css';
+import Spinner from './components/loading-spinner/Spinner';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const {imageList, isLoading} = useImageList();
+
+  return isLoading ? (
+    <Spinner />
+  ) : (
+    <>
+      <h1 className={styles.title}>Image Gallery</h1>
+      <div className={styles.imageList}>
+        {imageList?.map((image) => (
+          <img
+            loading='lazy'
+            key={image?.uuid}
+            src={image?.url}
+            alt={image?.name ?? 'image'}
+            className={styles.image}
+          />
+        ))}
+      </div>
+    </>
   );
 }
 
