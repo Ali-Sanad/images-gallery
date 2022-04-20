@@ -8,18 +8,12 @@
   gap: 10px;
 }
 
-.image {
-  width: 200px;
-  height: 200px;
-}
-
 .title {
   text-align: center;
 }
 
-@media screen and (max-width: 500px) {
-  .image {
+@media screen and (max-width: 1080px) {
+  .imageList {
     width: 100%;
-    height: 200px;
   }
 }
