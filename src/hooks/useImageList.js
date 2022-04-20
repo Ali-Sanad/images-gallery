@@ -6,8 +6,8 @@ const useImageList = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeImage, setActiveImage] = useState(imageList[activeIndex]);
-
   const [isOpen, setIsOpen] = useState(false);
+
   const fetchImages = async () => {
     setIsLoading(true);
     const response = await fetch(API_URL);
@@ -15,6 +15,7 @@ const useImageList = () => {
     setImageList(data);
     setIsLoading(false);
   };
+
   useEffect(() => {
     fetchImages();
   }, []);

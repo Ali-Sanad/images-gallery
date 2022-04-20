@@ -4,9 +4,9 @@
   height: 200px;
 }
 
-/* .imageContainer:hover {
+.imageContainer:hover {
   cursor: pointer;
-} */
+}
 
 .image {
   width: 100%;
@@ -24,9 +24,6 @@
 
 .imageContainer:hover .imageIcon {
   display: block;
-}
-.imageIcon:hover {
-  cursor: pointer;
 }
 
 @media screen and (max-width: 500px) {
